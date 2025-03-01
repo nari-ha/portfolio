@@ -9,10 +9,17 @@ function App() {
 
   return (
     <>
-    <div>nari ha</div>
-    <div>profile</div>
-    <div>experience</div>
-    <div>project</div>
+      <div className="header">
+        <div className="main-logo"></div>
+        <div className="nav-bar">
+          <ul>
+            <li>profile</li>
+            <li>experience</li>
+            <li>education</li>
+            <li>work</li>
+          </ul>
+        </div>
+      </div>
     </>
   )
 }
