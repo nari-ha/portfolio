@@ -1,6 +1,6 @@
 function Profile() {
   return (
-    <div className="page">
+    <>
       <div className="component-wrap">
         <div className="component">
           <div className="component-inner left">
@@ -16,7 +16,7 @@ function Profile() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 export default Profile;

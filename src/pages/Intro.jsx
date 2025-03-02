@@ -28,7 +28,7 @@ function Intro() {
     };
   }, [text]);
   return (
-    <div className="page">
+    <>
       <div className="intro">
         <div>
           <div
@@ -48,7 +48,7 @@ function Intro() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

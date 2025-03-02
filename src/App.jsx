@@ -76,7 +76,7 @@ function App() {
       </div>
 
       <div className="page">
-        <Routes location={ location }>
+        <Routes>
           <Route path="/" element={<Intro />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/experience" element={<Experience />} />

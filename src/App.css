@@ -27,17 +27,6 @@ body {
   color: #3c3c3c;
 }
 
-.page {
-  width: 100vw;
-  height: 100vh;
-  font-style: normal;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 0;
-}
-
 .header { 
   width: 100%;
   display: flex;
@@ -121,6 +110,18 @@ body {
   justify-content: center;
   align-items: center;
 } */
+
+.page {
+  width: 100vw;
+  height: 100vh;
+  font-style: normal;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+}
 
 .component-wrap {
   background-color: #fff;
@@ -220,7 +221,7 @@ body {
   display: inline-block;
   transform: rotate(45deg);
   position: absolute;
-  top: -4px;
+  top: -5px;
   left: 2px;
   transition: all 0.2s ease-in-out;
 }
