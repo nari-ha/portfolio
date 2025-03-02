@@ -27,12 +27,24 @@ body {
   color: #3c3c3c;
 }
 
+.page {
+  width: 100vw;
+  height: 100vh;
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+}
+
 .header { 
   width: 100%;
   display: flex;
   /* background-color: #e6e6e6; */
   padding: 20px 60px;
   position: fixed;
+  z-index: 1;
 }
 
 .header .main-logo {
@@ -62,6 +74,7 @@ body {
 
 .header .nav-bar ul li:hover {
   color: #000;
+  cursor: pointer;
 }
 
 /* .header .nav-bar ul li:after {
@@ -98,11 +111,62 @@ body {
   height: 18px;
 }
 
-.intro {
+/* .main {
   width: 100vw;
   height: 100vh;
   text-align: center;
   font-style: normal;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+} */
+
+.component-wrap {
+  background-color: #fff;
+  border-radius: 25px;
+}
+
+.component {
+  width: 70vw;
+  height: 60vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  padding: 50px;
+}
+
+.component-inner {
+  width: 50%;
+}
+
+.component-inner.left {
+  margin-right: 10px;
+}
+
+.component-inner.right {
+  margin-left: 10px;
+}
+
+.component-inner .photo {
+  width: 100%;
+  height: 100%;
+  background-image: url(/images/capybara.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.component-inner .text {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align:start;
+}
+
+.intro {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -156,7 +220,7 @@ body {
   display: inline-block;
   transform: rotate(45deg);
   position: absolute;
-  top: -3px;
+  top: -4px;
   left: 2px;
   transition: all 0.2s ease-in-out;
 }

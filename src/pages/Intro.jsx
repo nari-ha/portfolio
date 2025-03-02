@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 
 function Intro() {
+  let navigate = useNavigate();
   let tmp = "Hi, I'm Nari Ha, a Software Engineer.";
   let content = [...tmp];
   content[16] = "<br/>";
@@ -26,7 +28,7 @@ function Intro() {
     };
   }, [text]);
   return (
-    <>
+    <div className="page">
       <div className="intro">
         <div>
           <div
@@ -37,8 +39,8 @@ function Intro() {
           ></div>
         </div>
         <div>
-          <div className="button">
-            <div style={{marginLeft: '-7px', marginTop: '-3px'}}>profile</div>
+          <div className="button" onClick={()=>{ navigate("/profile"); }}>
+            <div style={{marginLeft: '-7px', marginTop: '-4px'}}>profile</div>
             <div className="arrow">
               <span></span>
               <span></span>
@@ -46,7 +48,7 @@ function Intro() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

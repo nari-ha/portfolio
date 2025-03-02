@@ -1,14 +1,17 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import "./App.css";
-import Work from "./components/Work";
-import List from "./components/List";
-import Profile from "./components/Profile";
-import Intro from "./components/Intro";
-import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
+import Work from "./pages/Work";
+import List from "./pages/List";
+import Profile from "./pages/Profile";
+import Intro from "./pages/Intro";
+import Experience from "./pages/Experience";
+import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 function App() {
   const [count, setCount] = useState(0);
   let navigate = useNavigate();
+  let location = useLocation();
 
   return (
     <>
@@ -17,7 +20,6 @@ function App() {
         <div className="nav-bar">
           <ul>
             <li
-              title="home"
               onClick={() => {
                 navigate("/");
               }}
@@ -25,7 +27,6 @@ function App() {
               home
             </li>
             <li
-              title="profile"
               onClick={() => {
                 navigate("/profile");
               }}
@@ -33,7 +34,6 @@ function App() {
               profile
             </li>
             <li
-              title="experience"
               onClick={() => {
                 navigate("/experience");
               }}
@@ -41,7 +41,6 @@ function App() {
               experience
             </li>
             <li
-              title="work"
               onClick={() => {
                 navigate("/work");
               }}
@@ -49,7 +48,6 @@ function App() {
               work
             </li>
             <li
-              title="contact"
               onClick={() => {
                 navigate("/contact");
               }}
@@ -76,11 +74,14 @@ function App() {
           </ul>
         </div>
       </div>
-      <Routes>
-        <Route path="/" element={<Intro />}></Route>
-        <Route></Route>
-        <Route></Route>
-      </Routes>
+
+      <div className="page">
+        <Routes location={ location }>
+          <Route path="/" element={<Intro />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/experience" element={<Experience />} />
+        </Routes>
+      </div>
     </>
   );
 }
