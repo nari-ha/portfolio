@@ -26,7 +26,7 @@ function Work() {
               <div
                 key={i}
                 onClick={() => {
-                    handleClick(data[i].id)
+                  handleClick(data[i].id);
                 }}
                 className="card-wrapper"
               >
@@ -36,7 +36,7 @@ function Work() {
           })}
         </div>
         <div className="section">
-        {showContent && <Content id={idx} data={data} />}
+          {showContent && <Content id={idx} data={data} />}
         </div>
       </div>
     </>
@@ -49,16 +49,25 @@ function Content({ id, data }) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => setIsVisible(true), 10); 
+    setTimeout(() => setIsVisible(true), 10);
   }, []);
 
   return (
     <>
       <div className={`content ${isVisible ? "open" : ""}`}>
         <div className="content-inner">
-          <img className="content-image" src={data[id].img} />
-          <div className="content-title">{data[id].title}</div>
-          <div className="content-title">{data[id].detail}</div>
+          <div className="post">
+            <div className="content-title text title">{data[id].title}</div>
+            <div className="img-wrap">
+              <img className="content-image" src={data[id].img} />
+            </div>
+            <div className="content-detail text body">{data[id].detail}</div>
+            <div className="text heading">
+              {data[id].type == "research" ? "STUDY AREA" : "USED SKILLS"}
+            </div>
+            <div className="text body mb20">{data[id].skills}</div>
+            <div className="h30"></div>
+          </div>
         </div>
       </div>
     </>

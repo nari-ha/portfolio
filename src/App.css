@@ -153,6 +153,7 @@ body {
   align-items: stretch;
   padding: 40px 50px;
   min-width: 768px;
+  max-width: 1200px;
 }
 
 .component-inner {
@@ -323,7 +324,7 @@ body {
   width: 100%;
   background-color: #fff;
   border-radius: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .page .work-wrap .card .card-inner {
@@ -359,13 +360,70 @@ body {
   overflow-y: auto;
 }
 
+.page .work-wrap .section .content-inner .post{
+  padding: 20px;
+  height: 100%;
+}
+
 .page .work-wrap .section .content-inner::-webkit-scrollbar {
   display: none;
 }
 
+.page .work-wrap .section .content-inner .content-title {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.page .work-wrap .section .content-inner .content-detail {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.page .work-wrap .section .content-inner .img-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
 
 .page .work-wrap .section .content-inner .content-image {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.fb {
+  font-weight: 500;
+}
+
+.text.date {
+  color: #9e9e9e;
+  font-size: 10pt;
+}
+
+.mb20 {
+  margin-bottom: 20px;
+}
+
+.mb10 {
+  margin-bottom: 10px;
+}
+
+.mb5 {
+  margin-bottom: 5px;;
+}
+
+.jd {
+  font-size: 10pt;
+}
+
+.h30 {
   width: 100%;
+  height: 30px;
+}
+
+.pl10 {
+  padding-left: 10px;
 }
 
 @media ( max-width:1024px ) { 

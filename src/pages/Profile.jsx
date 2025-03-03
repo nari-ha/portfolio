@@ -35,7 +35,7 @@ function Profile() {
               <p className="text body">
                 Machine Learning & AI: PyTorch, OpenCV, TensorFlow, etc.
               </p>
-              <p className="text body">
+              <p className="text body mb20">
                 Tools & Others: Git, SQL, Linux, HTML, CSS etc.
               </p>
               <p className="text heading">LANGUAGE</p>
