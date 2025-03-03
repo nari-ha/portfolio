@@ -12,6 +12,7 @@ function App() {
   const [count, setCount] = useState(0);
   let navigate = useNavigate();
   let location = useLocation();
+  let nodeRef = useRef(null);
 
   return (
     <>
@@ -74,14 +75,30 @@ function App() {
           </ul>
         </div>
       </div>
-
       <div className="page">
+      <TransitionGroup>
+        <CSSTransition
+          key={location.pathname}
+          timeout={2000}
+          nodeRef={nodeRef}
+          classNames="page-transition"
+        >
+          <Routes location={location}>
+            <Route path="/" element={<Intro />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/experience" element={<Experience />} />
+          </Routes>
+        </CSSTransition>
+      </TransitionGroup>
+      </div>
+
+      {/* <div className="page">
         <Routes>
           <Route path="/" element={<Intro />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/experience" element={<Experience />} />
         </Routes>
-      </div>
+      </div> */}
     </>
   );
 }
