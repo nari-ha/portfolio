@@ -71,7 +71,7 @@ body {
   font-weight: 400;
   display: block;
   height: 0;
-  visibility: hidden;
+  visibility: hidde.;
 } */
 
 .header .nav-bar ul li:last-child {
@@ -115,12 +115,39 @@ body {
   width: 100vw;
   height: 100vh;
   font-style: normal;
-  text-align: center;
+  text-align: start;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   z-index: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-content {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.page-transition-enter {
+  z-index: 1;
+  transform: translateX(100%);
+}
+.page-transition-enter-active {
+  transform: translateX(0);
+  transition: transform 300ms;
+}
+.page-transition-exit {
+  z-index: 0;
+  transform: translateX(0);
+}
+.page-transition-exit-active {
+  transform: translateX(-100%);
+  transition: transform 300ms;
 }
 
 .component-wrap {
@@ -159,7 +186,7 @@ body {
   background-size: cover;
 }
 
-.component-inner .text {
+.component-inner .profile.text {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -180,6 +207,7 @@ body {
   font-size: 20pt;
   font-weight: 900;
   height: 88px;
+  text-align: center;
 }
 
 .intro .typing {
@@ -228,6 +256,24 @@ body {
 
 .intro .button:hover span::after {
   transform: rotate(45deg) translateX(2px) translateY(-2px);
+}
+
+.exp.component .work-title {
+  margin-bottom: 30px;
+}
+
+.exp.component .edu-title {
+  margin-bottom: 30px;
+}
+
+.text.body {
+  font-size: 12pt;
+  font-weight: 300;
+}
+
+.text.title {
+  font-size: 18pt;
+  font-weight: 700;
 }
 
 @keyframes blink {
