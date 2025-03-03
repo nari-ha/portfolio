@@ -5,7 +5,6 @@ import Profile from "./pages/Profile";
 import Intro from "./pages/Intro";
 import Experience from "./pages/Experience";
 import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 function App() {
   const [count, setCount] = useState(0);

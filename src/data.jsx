@@ -1,28 +1,28 @@
 let data = [
   {
     id: 0,
-    title: "hi im nari",
+    title: "VLM Object Detection (In Progress)",
     img: "/images/capybara.jpg",
     summary: "this is the brief description of project1",
     detail: "this is the long description of the project1this is description of the project1 description of the project1this is description of the project1",
   },
   {
     id: 1,
-    title: "hicvsdf",
+    title: "Person Search (In Progress)",
     img: "/images/jokebear.ico",
     summary: "this is the brief desffion of project",
     detail: "this is description of the project2 this is description of the project2",
   },
   {
     id: 2,
-    title: "hdfaerer",
+    title: "Cross Modal Learning",
     img: "/images/capybara.jpg",
-    summary: "this is the brief descrisdct",
+    summary: "MSc Dissertation - person re-identification model",
     detail: "this is description of the project3 this is description of the project2",
   },
   {
     id: 3,
-    title: "hsdfi",
+    title: "Responsive Web Front-end",
     img: "/images/capybara.jpg",
     summary: "this is the briedddoject",
     detail: "this is description of the project4 this is description of the project2",
@@ -32,7 +32,7 @@ let data = [
     title: "hasdsdi",
     img: "/images/capybara.jpg",
     summary: "this is the brief descraproject",
-    detail: "this is description of the project15 this is description of the project2",
+    detail: "Korean Institute of Information Scientists and Engineers",
   },
 ]
   export default data;
