@@ -282,6 +282,12 @@ body {
   margin-left: 10px;
 }
 
+.page .work-wrap .card-wrapper:hover .card {
+  background-color: #ececec;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
 .page .work-wrap .card {
   width: 100%;
   background-color: #fff;
@@ -306,10 +312,38 @@ body {
 .page .work-wrap .section .content {
   background: #fff;
   border-radius: 20px;
-  height: 100%;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.5s ease-in-out;
 }
 
-.page .work-wrap .section .content {
-  padding: 20px;
+.page .work-wrap .section .content.open {
+  height: 100%; /* 충분히 큰 값 (내용에 따라 조절) */
+}
+
+.page .work-wrap .section .content-inner {
+  padding: 30px;
   height: 100%;
+  overflow-y: auto;
+}
+
+.page .work-wrap .section .content-inner::-webkit-scrollbar {
+  display: none;
+}
+
+
+.page .work-wrap .section .content-inner .content-image {
+  width: 100%;
+}
+
+@media ( max-width:1024px ) { 
+
+}
+
+@media ( max-width:768px ) { 
+
+}
+
+@media ( max-width:576 ) { 
+
 }

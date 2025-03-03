@@ -1,54 +1,42 @@
 import List from "../pages/List";
 import Card from "./Card";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import data from "../data.jsx";
 
 function Work() {
-  let [content, setContent] = useState(0);
-  let data = [
-    {
-      id: 0,
-      title: "hi im nari",
-      detail: "this is description of the project1this is description of the project1",
-    },
-    {
-      id: 1,
-      title: "hi im asdf",
-      detail: "this is description of the project2 this is description of the project2",
-    },
-    {
-      id: 2,
-      title: "hi im erer",
-      detail: "this is description of the project3 this is description of the project2",
-    },
-    {
-      id: 3,
-      title: "hi sdfi",
-      detail: "this is description of the project4 this is description of the project2",
-    },
-    {
-      id: 4,
-      title: "hasdsdi",
-      detail: "this is description of the project15 this is description of the project2",
-    },
-  ];
+  let [idx, setIdx] = useState(0);
+  let [work, setWork] = useState(data);
+  let [showContent, setShowContent] = useState(true); // Content 표시 여부
+
+  const handleClick = (newId) => {
+    setShowContent(false); // 먼저 Content를 언마운트
+
+    setTimeout(() => {
+      setIdx(newId); // 새로운 id 설정
+      setShowContent(true); // 일정 시간 후 다시 Content 마운트
+    }, 300); // 200ms 딜레이 후 마운트
+  };
+
   return (
     <>
       <div className="work-wrap">
         <div className="list">
-          {data.map((e, i) => {
+          {work.map((e, i) => {
             return (
               <div
+                key={i}
                 onClick={() => {
-                  setContent(data[i].id);
+                    handleClick(data[i].id)
                 }}
+                className="card-wrapper"
               >
-                <List key={i} data={data[i]}></List>
+                <List key={i} data={work[i]}></List>
               </div>
             );
           })}
         </div>
         <div className="section">
-          <Content num={content} data={data} />
+        {showContent && <Content id={idx} data={data} />}
         </div>
       </div>
     </>
@@ -57,14 +45,20 @@ function Work() {
 
 export default Work;
 
-function Content({ num, data }) {
+function Content({ id, data }) {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => setIsVisible(true), 10); 
+  }, []);
+
   return (
     <>
-      <div className="content">
-        <div className="cotent-inner">
-          <img src="" />
-          <div className="content-title">{data[num].title}</div>
-          <div className="content-title">{data[num].detail}</div>
+      <div className={`content ${isVisible ? "open" : ""}`}>
+        <div className="content-inner">
+          <img className="content-image" src={data[id].img} />
+          <div className="content-title">{data[id].title}</div>
+          <div className="content-title">{data[id].detail}</div>
         </div>
       </div>
     </>

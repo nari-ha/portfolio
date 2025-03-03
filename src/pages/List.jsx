@@ -5,7 +5,7 @@ function List(props) {
       <div className="card">
         <div className="card-inner">
           <div className="card-title">{props.data.title}</div>
-          <div className="card-detail">{props.data.detail}</div>
+          <div className="card-detail">{props.data.summary}</div>
         </div>
       </div>
     </>
