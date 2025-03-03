@@ -25,6 +25,7 @@ body {
   height: 100vh; width: 100vw; */
   background-color: #bad5cd;
   color: #3c3c3c;
+  overflow: hidden;
 }
 
 .header { 
@@ -120,7 +121,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 0;
   position: relative;
   overflow: hidden;
 }
@@ -129,25 +129,6 @@ body {
   width: 100%;
   height: 100%;
   position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.page-transition-enter {
-  z-index: 1;
-  transform: translateX(100%);
-}
-.page-transition-enter-active {
-  transform: translateX(0);
-  transition: transform 300ms;
-}
-.page-transition-exit {
-  z-index: 0;
-  transform: translateX(0);
-}
-.page-transition-exit-active {
-  transform: translateX(-100%);
-  transition: transform 300ms;
 }
 
 .component-wrap {
@@ -157,7 +138,7 @@ body {
 
 .component {
   width: 70vw;
-  height: 60vh;
+  height: 65vh;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -276,8 +257,59 @@ body {
   font-weight: 700;
 }
 
-@keyframes blink {
-  0% { opacity: 1; }
-  50% { opacity: 0; }
-  100% { opacity: 1; }
+.page .work-wrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 70vw;
+  height: 65vh;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.page .work-wrap .list {
+  width: calc(30% - 10px);
+  height: 100%;
+  margin-right: 10px;
+  overflow-y: auto;
+}
+.page .work-wrap .list::-webkit-scrollbar {
+  display: none;
+}
+.page .work-wrap .section {
+  width: calc(70% - 10px);
+  height: 100%;
+  margin-left: 10px;
+}
+
+.page .work-wrap .card {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.page .work-wrap .card .card-inner {
+  padding: 20px;
+}
+
+.page .work-wrap .card .card-inner .card-title{
+  font-size: 13pt;
+  font-weight: 500;
+}
+
+.page .work-wrap .card .card-inner .card-detail{
+  font-size: 11pt;
+  font-weight: 200;
+}
+
+.page .work-wrap .section .content {
+  background: #fff;
+  border-radius: 20px;
+  height: 100%;
+}
+
+.page .work-wrap .section .content {
+  padding: 20px;
+  height: 100%;
 }

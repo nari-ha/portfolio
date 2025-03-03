@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 function Intro() {
   let navigate = useNavigate();
@@ -29,25 +29,32 @@ function Intro() {
   }, [text]);
   return (
     <>
-      <div className="intro">
-        <div>
-          <div
-            className="phrase"
-            dangerouslySetInnerHTML={{
-              __html: text + '<span class="typing">|</span>',
-            }}
-          ></div>
-        </div>
-        <div>
-          <div className="button" onClick={()=>{ navigate("/profile"); }}>
-            <div style={{marginLeft: '-7px', marginTop: '-4px'}}>profile</div>
-            <div className="arrow">
-              <span></span>
-              <span></span>
+        <div className="intro">
+          <div>
+            <div
+              className="phrase"
+              dangerouslySetInnerHTML={{
+                __html: text + '<span class="typing">|</span>',
+              }}
+            ></div>
+          </div>
+          <div>
+            <div
+              className="button"
+              onClick={() => {
+                navigate("/profile");
+              }}
+            >
+              <div style={{ marginLeft: "-7px", marginTop: "-4px" }}>
+                profile
+              </div>
+              <div className="arrow">
+                <span></span>
+                <span></span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
     </>
   );
 }

@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import "./App.css";
 import Work from "./pages/Work";
-import List from "./pages/List";
 import Profile from "./pages/Profile";
 import Intro from "./pages/Intro";
 import Experience from "./pages/Experience";
@@ -12,7 +11,6 @@ function App() {
   const [count, setCount] = useState(0);
   let navigate = useNavigate();
   let location = useLocation();
-  let nodeRef = useRef(null);
 
   return (
     <>
@@ -75,30 +73,15 @@ function App() {
           </ul>
         </div>
       </div>
-      <div className="page">
-      <TransitionGroup>
-        <CSSTransition
-          key={location.pathname}
-          timeout={2000}
-          nodeRef={nodeRef}
-          classNames="page-transition"
-        >
-          <Routes location={location}>
-            <Route path="/" element={<Intro />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/experience" element={<Experience />} />
-          </Routes>
-        </CSSTransition>
-      </TransitionGroup>
-      </div>
 
-      {/* <div className="page">
+      <div className="page">
         <Routes>
           <Route path="/" element={<Intro />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/experience" element={<Experience />} />
+          <Route path="/experience" element={<Experience />} />ㅊ
+          <Route path="/work" element={<Work />} />ㅊ
         </Routes>
-      </div> */}
+      </div>
     </>
   );
 }
