@@ -1,23 +1,28 @@
 let data = [
-    {
-      id: 0,
-      title: "White and Black",
-      content: "Born in France",
-      price: 120000,
-    },
-  
-    {
-      id: 1,
-      title: "Red Knit",
-      content: "Born in Seoul",
-      price: 110000,
-    },
-  
-    {
-      id: 2,
-      title: "Grey Yordan",
-      content: "Born in the States",
-      price: 130000,
-    },
-  ];
+  {
+    id: 0,
+    title: "hi im nari",
+    detail: "this is description of the project1this is description of the project1",
+  },
+  {
+    id: 1,
+    title: "hi im asdf",
+    detail: "this is description of the project2 this is description of the project2",
+  },
+  {
+    id: 2,
+    title: "hi im erer",
+    detail: "this is description of the project3 this is description of the project2",
+  },
+  {
+    id: 3,
+    title: "hi sdfi",
+    detail: "this is description of the project4 this is description of the project2",
+  },
+  {
+    id: 4,
+    title: "hasdsdi",
+    detail: "this is description of the project15 this is description of the project2",
+  },
+]
   export default data;
