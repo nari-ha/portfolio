@@ -9,7 +9,11 @@ function Intro() {
 
   let [text, setText] = useState("");
   let [idx, setIdx] = useState(0);
+  let [tran, setTran] = useState("");
 
+  useEffect(() => {
+    setTimeout(() => setTran("show"), 100);
+  }, []);
   useEffect(() => {
     let interval = setInterval(() => {
       if (idx < content.length) {
@@ -27,6 +31,7 @@ function Intro() {
       clearInterval(interval);
     };
   }, [text]);
+  
   return (
     <>
         <div className="intro">
@@ -40,7 +45,7 @@ function Intro() {
           </div>
           <div>
             <div
-              className="button"
+              className={`button ${tran}`}
               onClick={() => {
                 navigate("/profile");
               }}

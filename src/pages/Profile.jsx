@@ -1,9 +1,13 @@
 import { useState, useEffect } from "react";
 
 function Profile() {
+  let [tran, setTran] = useState("");
+  useEffect(() => {
+    setTimeout(() => setTran("show"), 100); 
+  }, []);
   return (
     <>
-      <div className="component-wrap">
+      <div className={`component-wrap ${tran}`}>
         <div className="component">
           <div className="component-inner left">
             <div className="text title">PROFILE</div>
