@@ -1,5 +1,4 @@
-import List from "../pages/List";
-import Card from "./Card";
+import List from "../components/List.jsx";
 import { useState, useEffect } from "react";
 import data from "../data.jsx";
 
@@ -66,10 +65,31 @@ function Content({ id, data }) {
               {data[id].type == "research" ? "STUDY AREA" : "USED SKILLS"}
             </div>
             <div className="text body mb20">{data[id].skills}</div>
+            {
+              data[id].github !== "" ? <Button url={data[id].github}/> : null
+            }
             <div className="h30"></div>
           </div>
         </div>
       </div>
     </>
   );
+}
+
+function Button(props) {
+  let [tran, setTran] = useState("");
+  useEffect(() => {
+    setTimeout(() => setTran("show"), 500);
+  }, []);
+  return (
+    <>
+    <div onClick={()=>{window.open(`${props.url}`, "_blank")}} className={`github-button ${tran}`}>
+      <div className="btn text">go</div>
+      <div className="arrow">
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    </>
+  )
 }

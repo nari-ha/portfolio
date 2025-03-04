@@ -35,7 +35,7 @@ function Intro() {
   return (
     <>
         <div className="intro">
-          <div>
+          <div className="phrase-wrap">
             <div
               className="phrase"
               dangerouslySetInnerHTML={{
@@ -47,7 +47,7 @@ function Intro() {
             <div
               className={`button ${tran}`}
               onClick={() => {
-                navigate("/profile");
+                navigate("/about");
               }}
             >
               <div style={{ marginLeft: "-7px", marginTop: "-4px" }}>

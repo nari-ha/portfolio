@@ -13,6 +13,10 @@ function App() {
 
   return (
     <>
+      <div id="stars"></div>
+      <div id="stars2"></div>
+      <div id="stars3"></div>
+
       <div className="header">
         <div className="main-logo">Nari</div>
         <div className="nav-bar">
@@ -26,14 +30,14 @@ function App() {
             </li>
             <li
               onClick={() => {
-                navigate("/profile");
+                navigate("/about");
               }}
             >
-              profile
+              about
             </li>
             <li
               onClick={() => {
-                navigate("/experience");
+                navigate("/exp");
               }}
             >
               experience
@@ -76,8 +80,8 @@ function App() {
       <div className="page">
         <Routes>
           <Route path="/" element={<Intro />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/experience" element={<Experience />} />ㅊ
+          <Route path="/about" element={<Profile />} />
+          <Route path="/exp" element={<Experience />} />ㅊ
           <Route path="/work" element={<Work />} />ㅊ
         </Routes>
       </div>

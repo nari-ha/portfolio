@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Button from "../components/Button";
 
 function Profile() {
   let [tran, setTran] = useState("");
@@ -29,19 +30,20 @@ function Profile() {
               <br/>
               <p className="text heading">SKILLS</p>
               <p className="text body">
-                Programming Languages: Python, React.js, JavaScript, Java,
+                - Programming Languages: Python, React.js, JavaScript, Java,
                 C/C++, Kotlin, etc.
               </p>
               <p className="text body">
-                Machine Learning & AI: PyTorch, OpenCV, TensorFlow, etc.
+                - Machine Learning & AI: PyTorch, OpenCV, TensorFlow, etc.
               </p>
               <p className="text body mb20">
-                Tools & Others: Git, SQL, Linux, HTML, CSS etc.
+                - Tools & Others: Git, SQL, Linux, HTML, CSS etc.
               </p>
               <p className="text heading">LANGUAGE</p>
               <p className="text body">Korean: native</p>
               <p className="text body">English: fluent</p>
             </div>
+            <Button link="exp"></Button>
           </div>
         </div>
       </div>

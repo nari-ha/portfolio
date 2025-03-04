@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import data from "../exp.jsx";
+import Button from "../components/Button.jsx";
 
 function Experience() {
   let [exp, setExp] = useState(data);
@@ -26,7 +27,7 @@ function Experience() {
               <p className="mb5">MSc in Machine Learning for Visual Data Analytics</p>
               <p className="text date mb20">Aug 2023 - Dec 2024</p>
               <p className="fb">
-                Konkuk University &#40;Seoul, South Korea&#41;
+                Konkuk University &#40;Seoul&#41;
               </p>
               <p className="mb5">BS in Software Engineering</p>
               <p className="text date mb20">Mar 2016 - Aug 2020</p>
@@ -37,6 +38,7 @@ function Experience() {
               <p className="text date mb10">Jan 2023 - Jun 2023</p>
             </div>
           </div>
+          <Button link="work"></Button>
         </div>
       </div>
     </>
@@ -47,7 +49,7 @@ function Block({ exp }) {
   return (
     <>
       <p className="fb">{exp.company}</p>
-      <p className="">{exp.job}</p>
+      <p className="mb5">{exp.job}</p>
       <p className="jd mb5">{exp.des}</p>
       <p className="text date mb10">{exp.date}</p>
     </>
