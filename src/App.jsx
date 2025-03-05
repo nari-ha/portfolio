@@ -1,88 +1,58 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import Work from "./pages/Work";
 import Profile from "./pages/Profile";
 import Intro from "./pages/Intro";
 import Experience from "./pages/Experience";
-import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
+
+import Side from "./components/Side";
+import { Routes, Route, useNavigate } from "react-router-dom";
+import { useMediaQuery } from "react-responsive";
+import WorkMobile from "./pages/WorkMobile";
 
 function App() {
-  const [count, setCount] = useState(0);
   let navigate = useNavigate();
-  let location = useLocation();
+  let isMobile = useMediaQuery({ maxWidth: 768 });
+  let [side, setSide] = useState(false);
+
+  useEffect(() => {
+    isMobile ? setSide(false) : setSide(true);
+  }, [isMobile]);
 
   return (
     <>
       <div id="stars"></div>
       <div id="stars2"></div>
       <div id="stars3"></div>
-
       <div className="header">
+        <div
+          onClick={() => {
+            setSide(!side);
+          }}
+          className={`ham-btn ${side ? "active" : ""}`}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
         <div className="main-logo">Nari</div>
-        <div className="nav-bar">
-          <ul>
-            <li
-              onClick={() => {
-                navigate("/");
-              }}
-            >
-              home
-            </li>
-            <li
-              onClick={() => {
-                navigate("/about");
-              }}
-            >
-              about
-            </li>
-            <li
-              onClick={() => {
-                navigate("/exp");
-              }}
-            >
-              experience
-            </li>
-            <li
-              onClick={() => {
-                navigate("/work");
-              }}
-            >
-              work
-            </li>
-            <li
-              onClick={() => {
-                navigate("/contact");
-              }}
-            >
-              contact
-            </li>
-          </ul>
-        </div>
-        <div className="links">
-          <ul>
-            <li className="ig">
-              <a href="https://www.linkedin.com/in/narihanar/">
-                <img src="/images/li-logo.svg" />
-              </a>
-            </li>
-            <li className="gh">
-              <a href="https://github.com/nari-ha">
-                <img src="/images/gh-logo.svg" />
-              </a>
-            </li>
-            <li className="li">
-              <img src="/images/ig-logo.svg" />
-            </li>
-          </ul>
-        </div>
+        {side == true ? (
+          <Side
+            isMobile={isMobile}
+            side={side}
+            navigate={navigate}
+            setSide={setSide}
+          />
+        ) : null}
       </div>
 
       <div className="page">
         <Routes>
           <Route path="/" element={<Intro />} />
           <Route path="/about" element={<Profile />} />
-          <Route path="/exp" element={<Experience />} />ㅊ
-          <Route path="/work" element={<Work />} />ㅊ
+          <Route path="/exp" element={<Experience />} />
+          <Route path="/work" element={!isMobile ? <Work /> : <WorkMobile />} />
         </Routes>
       </div>
     </>

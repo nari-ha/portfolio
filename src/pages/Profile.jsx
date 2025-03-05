@@ -28,7 +28,7 @@ function Profile() {
                 with the latest AI technologies.
               </p>
               <br/>
-              <p className="text heading">SKILLS</p>
+              <p className="text heading mb5">SKILLS</p>
               <p className="text body">
                 - Programming Languages: Python, React.js, JavaScript, Java,
                 C/C++, Kotlin, etc.
@@ -39,7 +39,7 @@ function Profile() {
               <p className="text body mb20">
                 - Tools & Others: Git, SQL, Linux, HTML, CSS etc.
               </p>
-              <p className="text heading">LANGUAGE</p>
+              <p className="text heading mb5">LANGUAGE</p>
               <p className="text body">Korean: native</p>
               <p className="text body">English: fluent</p>
             </div>
