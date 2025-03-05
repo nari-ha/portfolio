@@ -68,7 +68,7 @@ body {
   align-items: center;
   padding: 20px 60px;
   position: fixed;
-  z-index: 1;
+  z-index: 99;
 }
 
 .header .main-logo {
@@ -221,7 +221,7 @@ body {
   padding: 40px 50px;
   min-width: 768px;
   max-width: 1200px;
-  z-index: 99;
+  z-index: 1;
   position: relative;
 }
 
@@ -280,7 +280,6 @@ body {
   font-family: "Playwrite IT Moderna", serif;
   font-optical-sizing: auto;
   font-size: 20pt;
-  font-weight: 900;
   height: 88px;
   text-align: center;
   color: #e6e6e6;
@@ -664,6 +663,13 @@ body {
 }
 
 @media (max-width: 768px) {
+  .page {
+    display: block;
+    overflow: scroll;
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: 20px;
+    padding-right: 20px;
+  }
   .page .work-wrap .card,
   .component-wrap {
     border-radius: 15px;
@@ -724,7 +730,8 @@ body {
   .component {
     min-width: 0;
     width: 85vw;
-    height: 85vh;
+    overflow-y: visible;
+    height: auto;
     padding: 25px;
     display: block;
     overflow-y: scroll;
@@ -753,7 +760,7 @@ body {
 
   .page .work-wrap {
     width: 85vw;
-    height: 85vh;
+    height: auto;
     min-height: 300px;
   }
 
