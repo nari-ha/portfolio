@@ -1,6 +1,7 @@
-import Side from "./components/Side";
+import Side from "./Side";
+import { useState, useEffect } from "react";
 
-function Header({ isMobile, navigate }) {
+function Header({ isMobile, navigate, hasScrolled }) {
   let [side, setSide] = useState(false);
 
   useEffect(() => {
@@ -8,7 +9,7 @@ function Header({ isMobile, navigate }) {
   }, [isMobile]);
   return (
     <>
-      <div className="header">
+      <div className={`header ${hasScrolled ? "scroll" : ""}`}>
         <div
           onClick={() => {
             setSide(!side);
@@ -23,10 +24,10 @@ function Header({ isMobile, navigate }) {
         <div className="main-logo">Nari</div>
         {side == true ? (
           <Side
-            isMobile={isMobile}
             side={side}
             navigate={navigate}
             setSide={setSide}
+            isMobile={isMobile}
           />
         ) : null}
       </div>

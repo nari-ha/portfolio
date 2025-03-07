@@ -30,7 +30,7 @@ function Intro() {
     return () => {
       clearInterval(interval);
     };
-  }, [text]);
+  }, [text, content, idx]);
   
   return (
     <>

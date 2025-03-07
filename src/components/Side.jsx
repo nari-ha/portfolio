@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
-function Side({ navigate, setSide, side }) {
+
+function Side({ navigate, setSide, side, isMobile }) {
   let [tran, setTran] = useState("");
   useEffect(() => {
     setTran("open")
@@ -15,7 +15,7 @@ function Side({ navigate, setSide, side }) {
               <li
                 onClick={() => {
                   navigate("/");
-                  setSide(false);
+                  isMobile?setSide(false):null;
                 }}
               >
                 home
@@ -23,7 +23,7 @@ function Side({ navigate, setSide, side }) {
               <li
                 onClick={() => {
                   navigate("/about");
-                  setSide(false);
+                  isMobile?setSide(false):null;
                 }}
               >
                 about
@@ -31,7 +31,7 @@ function Side({ navigate, setSide, side }) {
               <li
                 onClick={() => {
                   navigate("/exp");
-                  setSide(false);
+                  isMobile?setSide(false):null;
                 }}
               >
                 experience
@@ -39,7 +39,7 @@ function Side({ navigate, setSide, side }) {
               <li
                 onClick={() => {
                   navigate("/work");
-                  setSide(false);
+                  isMobile?setSide(false):null;
                 }}
               >
                 work
@@ -47,7 +47,7 @@ function Side({ navigate, setSide, side }) {
               <li
                 onClick={() => {
                   navigate("/contact");
-                  setSide(false);
+                  isMobile?setSide(false):null;
                 }}
               >
                 contact
