@@ -1,4 +1,3 @@
-
 import "./App.css";
 import Header from "./components/Header";
 import Work from "./pages/Work";
@@ -11,23 +10,31 @@ import { useState, useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 
-
 function App() {
   let navigate = useNavigate();
   let isMobile = useMediaQuery({ maxWidth: 768 });
-  const [hasScrolled, setHasScrolled] = useState(false);
+  const [scroll, setScroll] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setHasScrolled(window.scrollY > 50);
-      console.log(hasScrolled);
+    const page = document.querySelector(".page");
+
+    if (!page) {
+      return;
+    }
+
+    // console.log("📏 page.clientHeight:", page.clientHeight);
+    // console.log("📜 page.scrollHeight:", page.scrollHeight);
+    // console.log("📍 page.offsetHeight:", page.offsetHeight);
+
+    const Scroll = () => {
+      setScroll(page.scrollTop > 0);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    page.addEventListener("scroll", Scroll);
 
-    // return () => {
-    //   window.removeEventListener('scroll', handleScroll);
-    // };
+    return () => {
+      page.removeEventListener("scroll", Scroll);
+    };
   }, []);
 
   return (
@@ -35,7 +42,7 @@ function App() {
       <div id="stars"></div>
       <div id="stars2"></div>
       <div id="stars3"></div>
-      <Header isMobile={isMobile} navigate={navigate} hasScrolled={hasScrolled}/>
+      <Header isMobile={isMobile} navigate={navigate} scroll={scroll} />
       <div className="page">
         <Routes>
           <Route path="/" element={<Intro />} />

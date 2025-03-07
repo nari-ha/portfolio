@@ -196,7 +196,7 @@ body {
   overflow: hidden;
 }
 
-.page::-webkit-scrollbar  {
+.page::-webkit-scrollbar {
   display: none;
 }
 
@@ -677,10 +677,16 @@ body {
     padding-bottom: 70px;
     padding-left: 20px;
     padding-right: 20px;
+    -webkit-overflow-scrolling: touch;
   }
   .page .work-wrap .card,
   .component-wrap {
     border-radius: 15px;
+  }
+
+  .header.scroll {
+    background-color: #000;
+    transition: background-color 0.5s ease-in-out;
   }
   .header {
     display: block;
@@ -733,10 +739,6 @@ body {
   .header .ham-btn {
     display: block;
     z-index: 999;
-  }
-
-  .header.scroll {
-    background-color: #000;
   }
 
   .component {
@@ -846,7 +848,6 @@ body {
 }
 
 @media (max-width: 576) {
-
 }
 
 @keyframes blink {
