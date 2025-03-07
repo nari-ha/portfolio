@@ -18,10 +18,6 @@ function App() {
   useEffect(() => {
     let page = document.querySelector(".page");
 
-    if (isMobile) {
-      page.style.height = window.innerHeight + "px";
-    }
-
     // console.log("📏 page.clientHeight:", page.clientHeight);
     // console.log("📜 page.scrollHeight:", page.scrollHeight);
     // console.log("📍 page.offsetHeight:", page.offsetHeight);
