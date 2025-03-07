@@ -674,7 +674,7 @@ body {
   .page {
     display: block;
     overflow: scroll;
-    padding-bottom: 70px;
+    padding-bottom: 30px;
     padding-left: 20px;
     padding-right: 20px;
     -webkit-overflow-scrolling: touch;

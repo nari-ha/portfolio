@@ -16,10 +16,10 @@ function App() {
   const [scroll, setScroll] = useState(false);
 
   useEffect(() => {
-    const page = document.querySelector(".page");
+    let page = document.querySelector(".page");
 
-    if (!page) {
-      return;
+    if (isMobile) {
+      page.style.height = window.innerHeight + "px";
     }
 
     // console.log("📏 page.clientHeight:", page.clientHeight);
