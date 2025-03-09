@@ -54,6 +54,8 @@ body {
   background-position: center;
   height: 100vh; width: 100vw; */
   /* background-color: #bad5cd; */
+  height: 100vh;
+  width: 100vw;
   background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
   color: #3c3c3c;
   overflow: hidden;
@@ -184,6 +186,8 @@ body {
 } */
 
 .page {
+  position: fixed;
+  top: 0px;
   width: 100vw;
   height: 100vh;
   font-style: normal;
@@ -192,7 +196,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
   overflow: hidden;
 }
 
@@ -671,6 +674,12 @@ body {
 }
 
 @media (max-width: 768px) {
+  body {
+    height: 100vh;
+    width: 100vw;
+    overflow: auto;
+    z-index: -1;
+  }
   .page {
     display: block;
     overflow: scroll;
@@ -748,8 +757,6 @@ body {
     height: auto;
     padding: 25px;
     display: block;
-    overflow-y: scroll;
-    overflow-x: hidden;
   }
 
   .component-inner.left,
@@ -770,6 +777,11 @@ body {
 
   .component-inner .photo-frame .profile-photo {
     margin-top: 30px;
+  }
+
+  .page {
+    position: fixed;
+    top: 70px;
   }
 
   .page .work-wrap {
@@ -862,10 +874,16 @@ body {
   }
 }
 
-html {
+/* html {
   height: 100%;
   background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
   overflow: hidden;
+} */
+
+.bg {
+  height: 100vh;
+  overflow: hidden;
+  z-index: -999;
 }
 
 #stars {

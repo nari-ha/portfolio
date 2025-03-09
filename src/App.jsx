@@ -16,28 +16,31 @@ function App() {
   const [scroll, setScroll] = useState(false);
 
   useEffect(() => {
-    let page = document.querySelector(".page");
+    // let page = document.querySelector(".page");
 
     // console.log("📏 page.clientHeight:", page.clientHeight);
     // console.log("📜 page.scrollHeight:", page.scrollHeight);
     // console.log("📍 page.offsetHeight:", page.offsetHeight);
 
     const Scroll = () => {
-      setScroll(page.scrollTop > 0);
+      setScroll(window.scrollY > 50);
     };
 
-    page.addEventListener("scroll", Scroll);
+    window.addEventListener("scroll", Scroll);
 
     return () => {
-      page.removeEventListener("scroll", Scroll);
+      window.removeEventListener("scroll", Scroll);
     };
   }, []);
 
   return (
     <>
-      <div id="stars"></div>
-      <div id="stars2"></div>
-      <div id="stars3"></div>
+      <div className="bg">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+      </div>
+
       <Header isMobile={isMobile} navigate={navigate} scroll={scroll} />
       <div className="page">
         <Routes>

@@ -14,7 +14,7 @@ function Profile() {
             <div className="text title">PROFILE</div>
             {/* <div className="profile-photo"></div> */}
             <div className="photo-frame">
-              <img className="profile-photo" src="/images/capybara.jpg" />
+              <img className="profile-photo" src="/images/Nari.JPEG" />
             </div>
           </div>
           <div className="component-inner right">
